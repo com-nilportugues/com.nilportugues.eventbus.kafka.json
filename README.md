@@ -29,6 +29,12 @@ Now add the package as a dependency:
 </dependencies>  
 ```
 
+## Contribute
+
+Contributions to the package are always welcome!
+
+* Report any bugs or issues you find on the [issue tracker](/../../issues/new).
+
 ## Support
 
 Get in touch with me using one of the following means:
