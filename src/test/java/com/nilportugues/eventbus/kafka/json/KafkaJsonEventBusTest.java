@@ -25,18 +25,6 @@ public class KafkaJsonEventBusTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
-    @BeforeEach
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
-    }
-
-    @AfterEach
-    public void cleanUpStreams() {
-        System.setOut(null);
-        System.setErr(null);
-    }
-
     @BeforeClass
     public static void setUp() {
         String topic = "test_topic_" + ZonedDateTime.now().getNano();
@@ -62,6 +50,18 @@ public class KafkaJsonEventBusTest {
 
         // Register Event Handlers
         eventSubscriber.subscribe(UserRegisteredEvent.class, "EventHandler");
+    }
+
+    @BeforeEach
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+    }
+
+    @AfterEach
+    public void cleanUpStreams() {
+        System.setOut(null);
+        System.setErr(null);
     }
 
     @Test
@@ -134,7 +134,7 @@ public class KafkaJsonEventBusTest {
 
         @Override
         public void consume() {
-            while(true) {
+            while (true) {
                 for (ConsumerRecord<String, String> record : consumer.poll(TIMEOUT)) {
                     if (null != record.value()) {
                         consumedEvent = record.value();

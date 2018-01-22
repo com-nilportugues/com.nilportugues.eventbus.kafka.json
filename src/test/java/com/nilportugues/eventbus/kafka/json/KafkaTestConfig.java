@@ -13,7 +13,7 @@ public class KafkaTestConfig {
 
     public static Properties buildProducerProps() {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "oauth.kafka1:9092,oauth.kafka2:9093");
+        props.put("bootstrap.servers", "spotify__kafka:9092");
 
         // MANDATORY
         props.put("key.serializer", BytesSerializer.class);
@@ -23,7 +23,7 @@ public class KafkaTestConfig {
 
     public static Properties buildConsumerProps() {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "oauth.kafka1:9092,oauth.kafka2:9093");
+        props.put("bootstrap.servers", "spotify__kafka:9092");
         props.put("session.timeout.ms", "6000");
         props.put("group.id", "event_consumer_json");
         props.put("client.id", UUID.randomUUID().toString());
