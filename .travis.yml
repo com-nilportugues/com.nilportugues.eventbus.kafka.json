@@ -6,6 +6,19 @@ jdk:
 install:
  - mvn -N io.takari:maven:wrapper
 
+env:
+  global:
+  - ZOOKEEPER_PEERS=localhost:2181
+  - KAFKA_PEERS=localhost:9092
+
+before_install:
+- echo '127.0.0.1 kafka' >> /etc/hosts 
+- wget http://www.us.apache.org/dist/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz -O kafka.tgz
+- mkdir -p kafka && tar xzf kafka.tgz -C kafka --strip-components 1
+- nohup bash -c "cd kafka && bin/zookeeper-server-start.sh config/zookeeper.properties &"
+- nohup bash -c "cd kafka && bin/kafka-server-start.sh config/server.properties &"
+- sleep 5
+
 script:
  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
  - mvn test
