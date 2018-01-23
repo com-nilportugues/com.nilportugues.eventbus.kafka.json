@@ -25,7 +25,7 @@
         <junit.jupiter.version>5.0.2</junit.jupiter.version>
         <junit.platform.version>1.0.2</junit.platform.version>
         <junit.vintage.version>4.12.2</junit.vintage.version>
-        <nilportugues.eventbus.version>1.0.0.RELEASE</nilportugues.eventbus.version>
+        <nilportugues.eventbus.version>1.0.1.RELEASE</nilportugues.eventbus.version>
     </properties>
     
     <repositories>
