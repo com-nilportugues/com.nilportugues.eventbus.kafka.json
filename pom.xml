@@ -2,9 +2,9 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.nilportugues.eventbus</groupId>
-    <artifactId>kafka-json</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <groupId>com.nilportugues</groupId>
+    <artifactId>eventbus-kafka-json</artifactId>
+    <version>1.0.2.RELEASE</version>
     <packaging>jar</packaging>
     <name>nilportugues/eventbus-kafka-json</name>
     <description>An Event Bus implementation using Apache Kafka and JSON</description>
