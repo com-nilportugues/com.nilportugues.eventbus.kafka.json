@@ -81,6 +81,11 @@
             <artifactId>log4j-api</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.25</version>
+        </dependency>        
         <!-- ***********************************************************
         * PROD: REACTIVE STREAMS
         ************************************************************ -->
