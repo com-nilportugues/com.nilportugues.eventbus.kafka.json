@@ -25,14 +25,11 @@ public class KafkaJsonEventConsumer<T> {
     }
 
     public void consume() {
-
-        new Thread(() -> {
-            while (true) {
-                for (ConsumerRecord<String, String> record : consumer.poll(TIMEOUT)) {
-                    forwardToEventHandlers(record);
-                }
-            }
-        }).start();
+        while (true) {
+           for (ConsumerRecord<String, String> record : consumer.poll(TIMEOUT)) {
+              forwardToEventHandlers(record);
+           }
+        }
     }
 
     private void forwardToEventHandlers(final ConsumerRecord<String, String> record) {
